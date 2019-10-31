@@ -23,20 +23,17 @@ public class Course {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name="title")
-	private String title;
+	@Column(name="name")
+	private String name;
 	
 	@Column(name="code")
 	private Integer code;
 
-	@ManyToMany(cascade = { CascadeType.ALL })
-	@JoinTable(name = "course_stream", joinColumns = { @JoinColumn(name = "course_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "stream_id") })
-	private Set<Stream> streams = new HashSet<Stream>();
-	
-	public Course(){
-		
-	}
+//	@ManyToMany(cascade = { CascadeType.ALL })
+//	@JoinTable(name = "course_stream", joinColumns = { @JoinColumn(name = "course_id") }, inverseJoinColumns = {
+//			@JoinColumn(name = "stream_id") })
+//	private Set<Stream> streams = new HashSet<Stream>();
+//	
 
 	public Integer getId() {
 		return id;
@@ -46,24 +43,24 @@ public class Course {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public Set<Stream> getStreams() {
-		return streams;
-	}
-
-	public void setStreams(Set<Stream> streams) {
-		this.streams = streams;
-	}
+//	public Set<Stream> getStreams() {
+//		return streams;
+//	}
+//
+//	public void setStreams(Set<Stream> streams) {
+//		this.streams = streams;
+//	}
 
 	
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public Integer getCode() {
 		return code;
 	}

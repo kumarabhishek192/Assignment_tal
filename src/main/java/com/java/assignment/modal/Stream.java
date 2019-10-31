@@ -21,13 +21,13 @@ public class Stream {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name="title")
-	private String title;
+	@Column(name="name")
+	private String name;
 	
 	@Column(name="code")
 	private Integer code;
 	
-	@ManyToMany(mappedBy = "streams", cascade = { CascadeType.ALL })
+	@ManyToMany(cascade = { CascadeType.ALL })
 	private Set<Course> courses = new HashSet<Course>();
 	
 	public Stream() {
@@ -41,13 +41,14 @@ public class Stream {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
 
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Integer getCode() {
