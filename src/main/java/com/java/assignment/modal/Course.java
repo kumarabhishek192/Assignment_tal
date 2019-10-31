@@ -10,21 +10,28 @@ import javax.persistence.Table;
 
 import io.swagger.annotations.ApiModelProperty;
 
+
+/**
+ * Course Entity
+ * 
+ * @author AbhishekK
+ *
+ */
 @Entity
 @Table(name = "course")
 public class Course extends ModalDao {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
+	@ApiModelProperty(notes = "Course Id",name="id",required=true,value="101")
 	private Integer id;
 
 	@Column(name = "name")
-	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
+	@ApiModelProperty(notes = "Name of the Course",name="name",required=true,value="Hotel Management")
 	private String name;
 
 	@Column(name = "code")
-	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
+	@ApiModelProperty(notes = "Course Code",name="code",required=true,value="3003")
 	private Integer code;
 
 	@ManyToOne

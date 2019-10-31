@@ -16,21 +16,27 @@ import javax.persistence.Table;
 
 import io.swagger.annotations.ApiModelProperty;
 
+/**
+ * Stream Entity
+ * 
+ * @author AbhishekK
+ *
+ */
 @Entity
 @Table(name = "stream", catalog = "assignment")
 public class Stream extends ModalDao{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
+	@ApiModelProperty(notes = "Stream Id",name="id",required=true,value="202")
 	private Integer id;
 
 	@Column(name = "name")
-	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
+	@ApiModelProperty(notes = "Name of the Stream",name="name",required=true,value="Computer Eng.")
 	private String name;
 
 	@Column(name = "code")
-	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
+	@ApiModelProperty(notes = "Stream Codet",name="code",required=true,value="10001")
 	private Integer code;
 
 	@OneToMany(cascade=CascadeType.PERSIST, fetch = FetchType.LAZY)

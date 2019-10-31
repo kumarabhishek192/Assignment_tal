@@ -7,6 +7,15 @@ import org.springframework.stereotype.Repository;
 
 import com.java.assignment.modal.Stream;
 
+
+/**
+ * Repository for Stream
+ * JPA Implementation
+ * 
+ * @author AbhishekK
+ *
+ */
+
 @Repository
 @Transactional
 public interface StreamRepository extends JpaRepository<Stream, Integer> {

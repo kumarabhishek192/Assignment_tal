@@ -12,6 +12,12 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 import java.util.Collections;
 
+/**
+ * Swagger Configuration
+ * 
+ * @author AbhishekK
+ *
+ */
 @Configuration
 public class SwaggerConfig {
 	@Bean
