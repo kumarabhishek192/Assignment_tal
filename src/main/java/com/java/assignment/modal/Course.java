@@ -1,39 +1,42 @@
 package com.java.assignment.modal;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
-@Table(name="course")
-public class Course {
+@Table(name = "course")
+public class Course extends ModalDao {
 
 	@Id
-	@Column(name="course_id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
 	private Integer id;
-	
-	@Column(name="name")
+
+	@Column(name = "name")
+	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
 	private String name;
-	
-	@Column(name="code")
+
+	@Column(name = "code")
+	@ApiModelProperty(notes = "Name of the Student",name="name",required=true,value="test name")
 	private Integer code;
 
-//	@ManyToMany(cascade = { CascadeType.ALL })
-//	@JoinTable(name = "course_stream", joinColumns = { @JoinColumn(name = "course_id") }, inverseJoinColumns = {
-//			@JoinColumn(name = "stream_id") })
-//	private Set<Stream> streams = new HashSet<Stream>();
-//	
+	@ManyToOne
+	private Stream stream;
+
+	public Stream getStream() {
+		return stream;
+	}
+
+	public void setStream(Stream stream) {
+		this.stream = stream;
+	}
 
 	public Integer getId() {
 		return id;
@@ -43,16 +46,6 @@ public class Course {
 		this.id = id;
 	}
 
-//	public Set<Stream> getStreams() {
-//		return streams;
-//	}
-//
-//	public void setStreams(Set<Stream> streams) {
-//		this.streams = streams;
-//	}
-
-	
-	
 	public String getName() {
 		return name;
 	}
@@ -68,11 +61,10 @@ public class Course {
 	public void setCode(Integer code) {
 		this.code = code;
 	}
-	
-//	@Override
-//	public String toString() {
-//		return "Course [id=" + id + ", title=" + title + ", streams=" + streams + ", getId()=" + getId()
-//				+ ", getTitle()=" + getTitle() + ", getStreams()=" + getStreams() + ", getClass()=" + getClass()
-//				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-//	}
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", code=" + code + "]";
+	}
+
 }
