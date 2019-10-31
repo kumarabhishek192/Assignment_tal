@@ -54,7 +54,7 @@ public class ResourceController {
 	 * @param id of stream
 	 * @return Stream
 	 */
-	@ApiOperation(value = "Get Stream with given id in the admin System ", response = Stream.class, tags = "getStudents")
+	@ApiOperation(value = "Get Stream with given id in the admin System ", response = Stream.class, tags = "getStreamById")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -72,7 +72,7 @@ public class ResourceController {
 	 * @param stream Object
 	 * @return List<Stream>
 	 */
-	@ApiOperation(value = "Add list of streams in the admin System ", response = Iterable.class, tags = "getStudents")
+	@ApiOperation(value = "Add list of streams in the admin System ", response = Iterable.class, tags = "addStream")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -90,7 +90,7 @@ public class ResourceController {
 	 * @param stream object
 	 * @return Stream.class
 	 */
-	@ApiOperation(value = "Update stream using stream id in the admin System ", response = Stream.class, tags = "getStudents")
+	@ApiOperation(value = "Update stream using stream id in the admin System ", response = Stream.class, tags = "updateStream")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -107,7 +107,7 @@ public class ResourceController {
 	 * @param id for deleting by id
 	 * @return list of rest stream
 	 */
-	@ApiOperation(value = "Delete stream by id in the admin System ", response = void.class, tags = "getStudents")
+	@ApiOperation(value = "Delete stream by id in the admin System ", response = void.class, tags = "deleteStream")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -124,7 +124,7 @@ public class ResourceController {
 	 * @param course object
 	 * @param id of Stream
 	 */
-	@ApiOperation(value = "Add courses to the stream in the admin System ", response = void.class, tags = "getStudents")
+	@ApiOperation(value = "Add courses to the stream in the admin System ", response = void.class, tags = "addStreamCourses")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -141,7 +141,7 @@ public class ResourceController {
 	 * Get all courses in the admin System
 	 * @return List<Course>
 	 */
-	@ApiOperation(value = "Get all courses in the admin System ", response = Iterable.class, tags = "getStudents")
+	@ApiOperation(value = "Get all courses in the admin System ", response = Iterable.class, tags = "getAllCourses")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -160,7 +160,7 @@ public class ResourceController {
 	 * @param name of the course
 	 * @return Course.class
 	 */
-	@ApiOperation(value = "Get course by name in the admin System ", response = Iterable.class, tags = "getStudents")
+	@ApiOperation(value = "Get course by name in the admin System ", response = Iterable.class, tags = "getCourseByName")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -178,7 +178,7 @@ public class ResourceController {
 	 * @param id of course
 	 * @return Course.class
 	 */
-	@ApiOperation(value = "Get course by id in the admin System ", response = Iterable.class, tags = "getStudents")
+	@ApiOperation(value = "Get course by id in the admin System ", response = Iterable.class, tags = "getCourseById")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -196,7 +196,7 @@ public class ResourceController {
 	 * @param courseList list of course
 	 * @return List<Course>
 	 */
-	@ApiOperation(value = "Add course in the admin System ", response = Iterable.class, tags = "getStudents")
+	@ApiOperation(value = "Add course in the admin System ", response = Iterable.class, tags = "addCourses")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -214,7 +214,7 @@ public class ResourceController {
 	 * @param id of course
 	 * @param course object
 	 */
-	@ApiOperation(value = "Update course by id in the admin System ", response = Iterable.class, tags = "getStudents")
+	@ApiOperation(value = "Update course by id in the admin System ", response = Iterable.class, tags = "updateCourse")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
@@ -231,7 +231,7 @@ public class ResourceController {
 	 * Delete course by id in the admin System
 	 * @param id of course
 	 */
-	@ApiOperation(value = "Delete course by id in the admin System ", response = Iterable.class, tags = "getStudents")
+	@ApiOperation(value = "Delete course by id in the admin System ", response = Iterable.class, tags = "deleteCourse")
 	@ApiResponses(value = {
 	            @ApiResponse(code = 200, message = "Success|OK"),
 	            @ApiResponse(code = 401, message = "not authorized!"),
